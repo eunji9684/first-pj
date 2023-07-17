@@ -5,7 +5,7 @@ import java.awt.GraphicsEnvironment;
 import java.io.File;
 
 public class Font_Install {
-
+//올라감?
 	public static Font font;
 	
 	public Font_Install(){
