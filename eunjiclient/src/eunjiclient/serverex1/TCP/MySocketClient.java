@@ -1,4 +1,4 @@
-package eunjiclient.serverex1;
+package eunjiclient.serverex1.TCP;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 //2023-07-14
-//클라이언트
+//클라이언트 TCP방법
 public class MySocketClient {
 
 	public static void main(String[] args) {
