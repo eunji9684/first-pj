@@ -12,8 +12,8 @@ import java.awt.Dimension;
 
 public class Function {
 	
-	ImageIcon funIcon1 = new ImageIcon("src/imgss/backg.png");
-	ImageIcon funIcon2 = new ImageIcon("src/imgss/backg2.png");
+	ImageIcon funIcon1 = new ImageIcon("src/img/backg.png");
+	ImageIcon funIcon2 = new ImageIcon("src/img/backg2.png");
 	Image funimg1 = funIcon1.getImage();
 	Image funimg2 = funIcon2.getImage();
 	
