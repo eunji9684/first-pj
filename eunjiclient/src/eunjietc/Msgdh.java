@@ -1,11 +1,11 @@
-package serverpj_ex1.dbconect;
+package eunjietc;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Base64.Encoder;
-//
+
 public class Msgdh {
 	/**
 	 * 입력 문자열을 SHA-256 알고리즘에 salt와 반복처리로 암호화하고 Base64로 인코딩한다.
