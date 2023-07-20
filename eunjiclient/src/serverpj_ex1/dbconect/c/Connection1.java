@@ -14,7 +14,7 @@ public class Connection1 {
 			
 			//연결하기
 			con = DriverManager.getConnection(
-					"jdbc:mariadb://localhost:3306/gamedb",
+					"jdbc:mariadb://localhost:3306/",
 					"tint",
 					"46119684"
 					

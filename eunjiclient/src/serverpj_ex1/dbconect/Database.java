@@ -11,8 +11,11 @@ import java.sql.SQLException;
 import java.util.Base64;
 
 public class Database {
+	
+	//데이터 베이스와의 연결을 관리하는 Connection객체 선언하기
     private  Connection con;
-
+    
+    //database 생성자 메서드로 객체가 생성될 때 데이터 베이스에 연결된다.
     public Database() {
         try {
             // JDBC Driver 등록
@@ -35,7 +38,9 @@ public class Database {
 
     // 임의의 솔트를 생성하는 메서드
     static String generateSalt() {
+    	//솔트를 포함한 비밀번호를 생성
         SecureRandom random = new SecureRandom();
+        
         byte[] salt = new byte[16];
         random.nextBytes(salt);
         return Base64.getEncoder().encodeToString(salt);
