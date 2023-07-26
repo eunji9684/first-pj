@@ -35,6 +35,46 @@ public class Database {
             e.printStackTrace();
         }
     }
+    
+    // 이메일로 사용자를 찾는 기능
+    public boolean findUserByEmail(String email) {
+        try {
+            String sql = "SELECT * FROM users WHERE email = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, email);
+            ResultSet rs = pstmt.executeQuery();
+
+            return rs.next(); // 이메일이 존재하면 true, 없으면 false 반환
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // 사용자 비밀번호 업데이트
+    public boolean updateUserPassword(String email, String password) {
+        try {
+            // 비밀번호를 해시화하여 데이터베이스에 저장하는 기능을 구현한 것으로 가정합니다.
+            String salt = Database.generateSalt();
+            String hashedPassword = Database.hashPassword(password, salt);
+
+            String sql = "UPDATE users SET password = ?, salt = ? WHERE email = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, hashedPassword);
+            pstmt.setString(2, salt);
+            pstmt.setString(3, email);
+
+            int rowsAffected = pstmt.executeUpdate();
+            pstmt.close();
+
+            return rowsAffected > 0; // 비밀번호 업데이트 성공 시 true, 실패 시 false 반환
+
+        } catch (SQLException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     // 임의의 솔트를 생성하는 메서드
     static String generateSalt() {
@@ -55,17 +95,19 @@ public class Database {
     }
 
     // 회원가입 기능
-    public boolean signUp(String id, String password) {//사용자 입력 Pass
+    public boolean signUp(String id, String password,String email, String tel) {//사용자 입력 Pass
         try {
             String salt = generateSalt();
             String hashedPassword = hashPassword(password, salt);
 
-            String sql = "INSERT INTO users (id, password, salt ,hashedPassword) VALUES (?, ?, ?,?)";
+            String sql = "INSERT INTO users (id, password, salt ,hashedPassword,email,tel) VALUES (?, ?, ?,?,?,?)";
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, id);
             pstmt.setString(2, password);
             pstmt.setString(3, salt);
             pstmt.setString(4, hashedPassword);
+            pstmt.setString(5, email);
+            pstmt.setString(6, tel);
 
             int rowsAffected = pstmt.executeUpdate();
             pstmt.close();
@@ -118,4 +160,5 @@ public class Database {
             return false;
         }
     }
+    
 }

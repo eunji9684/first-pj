@@ -7,5 +7,10 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/Manic-063/Desktop/mariadb-java-client-3.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manic-063/Desktop/json.jar"/>
+	<classpathentry kind="lib" path="firstpj/mail.jar"/>
+	<classpathentry kind="lib" path="firstpj/additionnal.jar"/>
+	<classpathentry kind="lib" path="firstpj/activation.jar"/>
+	<classpathentry kind="src" path="imgs"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

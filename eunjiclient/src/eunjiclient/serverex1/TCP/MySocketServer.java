@@ -17,14 +17,25 @@ public class MySocketServer {
 			int socketport = 1234;
 			ServerSocket serverSocket = new ServerSocket(socketport);//소켓
 			
+			IpBlocker ipBlocker = new IpBlocker();
+            ipBlocker.addBlockedIp("차단할_IP_주소"); // 차단할 IP 주소 추가
+			
 			Socket socketUser = null;//클라이언트 접속시 사용할 Socket
 			System.out.println("socket :" + socketport + "으로 서버가 열렸습니다.");
 			
 			//소켓 서버가 종료될 때까지 반복
 			while(true) {
 				socketUser = serverSocket.accept();
+				  String clientIp = socketUser.getInetAddress().getHostAddress();
+
+	                if (ipBlocker.isIpBlocked(clientIp)) {
+	                    System.out.println("차단된 IP가 접속하려 했습니다: " + clientIp);
+	                    socketUser.close(); // 차단된 IP 접속을 바로 종료
+	                    continue;
+	                }
+				
 				//소켓 서버로 접속 시 socketUser에 접속자 정보 할당
-				System.out.println("Client가 접속함 : " + socketUser.getLocalAddress());
+				System.out.println("Client가 접속함 : " +  clientIp);
 				//접속자의 getLocalAddress 가져오기
 				
 				//InputStream - 클라이언트에서 서버로

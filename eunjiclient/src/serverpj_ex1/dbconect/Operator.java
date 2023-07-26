@@ -10,8 +10,8 @@ public class Operator {
         opt.mf = new MainFrame(opt);
     }
 
-    public boolean signUp(String id, String password) {
-        return db.signUp(id, password);
+    public boolean signUp(String id, String password , String email, String utel) {
+        return db.signUp(id, password,email, utel);
     }
 
     public boolean loginCheck(String id, String password) {
