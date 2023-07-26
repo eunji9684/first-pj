@@ -17,6 +17,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
+import movecomu.RoundButton;
+
 public class 수입입력 extends JPanel{
 	private JTable table;
 	private JLabel lblNewLabel_1;

@@ -1,49 +1,47 @@
-package FunBack;
+package movecomu;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 
-public class Comudia extends JFrame {
+public class Comudia extends JPanel {
     private JLabel comuLabel;
     private JLabel diaryLabel;
 
     public Comudia() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle(" Comu Diary");
-        setSize(300, 200);
-        
-        getContentPane().setLayout(null);
 
+        setSize(332, 236);
+        
+        setLayout(null);
+        setBackground(new Color(206,251,235));
         comuLabel = new JLabel();
+        comuLabel.setHorizontalAlignment(SwingConstants.LEFT);
         comuLabel.setForeground(new Color(0, 0, 64));
         comuLabel.setOpaque(true);
         comuLabel.setBackground(new Color(133, 189, 239));
-        comuLabel.setFont(new Font("Nanum Pen", Font.BOLD | Font.ITALIC, 40));
-        comuLabel.setBounds(30, 10, 128, 50);
-        getContentPane().add(comuLabel);
+        comuLabel.setFont(new Font("Nanum Pen", Font.BOLD | Font.ITALIC, 55));
+        comuLabel.setBounds(31, 45, 183, 75);
+        
+        add(comuLabel);
 
         diaryLabel = new JLabel();
         diaryLabel.setForeground(new Color(153, 203, 249));
         diaryLabel.setOpaque(true);
-        diaryLabel.setBackground(new Color(0, 0, 64)); 
-        diaryLabel.setFont(new Font("Nanum Pen", Font.BOLD, 40));
-        diaryLabel.setBounds(56, 59, 128, 50);
-        getContentPane().add(diaryLabel);
-
-        setVisible(true);
+        diaryLabel.setBackground(new Color(14, 23, 197)); 
+        diaryLabel.setFont(new Font("Nanum Pen", Font.BOLD | Font.ITALIC, 55));
+        diaryLabel.setBounds(63, 119, 201, 81);
+       
+        add(diaryLabel);
 
         Thread thread = new Thread(new LabelUpdateThread());
         thread.start();
     }
-
-   public static void main(String[] args) {
-        new Comudia();
-    }
-
+    
     private class LabelUpdateThread implements Runnable {
         private final String[] comuTexts = { "  C", "O", "M", "U" };
         private final String[] diaryTexts = {    "  D", "I", "A", "R", "Y","!" };
@@ -58,15 +56,15 @@ public class Comudia extends JFrame {
                 while (comuIndex < comuTexts.length) {
                     updateComuLabel(comuTexts[comuIndex]);
                     comuIndex++;
-                    Thread.sleep(500);
+                    Thread.sleep(300);
                 }
 
-                Thread.sleep(700);
+                Thread.sleep(300);
 
                 while (diaryIndex < diaryTexts.length) {
                     updateDiaryLabel(diaryTexts[diaryIndex]);
                     diaryIndex++;
-                    Thread.sleep(500);
+                    Thread.sleep(400);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

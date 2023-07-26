@@ -1,4 +1,4 @@
-package hj;
+package movecomu;
 
 import javax.swing.JButton;
 
@@ -15,8 +15,8 @@ public class RoundButton extends JButton {
 
     private static final int ARC_WIDTH = 20; // 버튼의 둥근 모서리 너비
     private static final int ARC_HEIGHT = 20; // 버튼의 둥근 모서리 높이
-    private Color normalBackgroundColor = Color.WHITE; // 일반 상태의 배경색상
-    private Color clickBorderColor = Color.BLACK; // 클릭 상태의 테두리 색상
+    private Color normalBackgroundColor = new Color(0xffe6e6); // 일반 상태의 배경색상
+    private Color clickBorderColor = new Color(0x1e90ff); // 클릭 상태의 테두리 색상
     private float strokeWidth = 1.0f; // 테두리 두께
     
     
@@ -32,7 +32,7 @@ public class RoundButton extends JButton {
 
     public void setNormalBackgroundColor(int rgb) {
       
-       setNormalBackgroundColor(new Color( 0xCCB699));
+       setNormalBackgroundColor(new Color( 0x50B4F5));
     }
 
     public void setNormalBackgroundColor(Color color) {
@@ -49,10 +49,10 @@ public class RoundButton extends JButton {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         if (getModel().isArmed()) {
-        	 g2.setColor(new Color(0x662812));// 클릭 상태일 때 색상
+        	 g2.setColor(new Color(0xf6495ed));// 클릭 상태일 때 색상
         	 g2.fill(new RoundRectangle2D.Double(0, 0, getWidth()-1, getHeight()-2, 30,30));
-        	 setFont(new Font("Nanum Pen", Font.BOLD, 18));
-            setForeground(new Color( 0xCCB699));
+        	 setFont(new Font("Nanum Pen", Font.BOLD, 20));
+            setForeground(new Color( 0xf0ffff));
             g2.setStroke(new BasicStroke(strokeWidth)); // 클릭 상태일 때 테두리 두께
             g2.setColor(clickBorderColor); // 클릭 상태일 때 테두리 색상
             g2.draw(new RoundRectangle2D.Double(0, 0, getWidth()-1, getHeight()-2, 30, 30)); // 테두리 그리기
@@ -62,8 +62,8 @@ public class RoundButton extends JButton {
         	g2.setColor(normalBackgroundColor); // 일반 상태일 때 배경색상 사용
         	 g2.fill(new RoundRectangle2D.Double(0, 0, getWidth()-1, getHeight()-2, 30,30));
         	setFont(new Font("Nanum Pen", Font.BOLD, 18));
-            setForeground(new Color(64, 0, 0));
-            g2.setColor(new Color(0x523224)); // 일반 상태일 때 테두리 색상
+            setForeground(new Color(0x315593));
+            g2.setColor(new Color(0x191970)); // 일반 상태일 때 테두리 색상
             g2.setStroke(new BasicStroke(strokeWidth)); // 일반 상태일 때 테두리 두께
             g2.draw(new RoundRectangle2D.Double(0, 0, getWidth()-1, getHeight()-2, 30, 30)); // 테두리 그리기
             

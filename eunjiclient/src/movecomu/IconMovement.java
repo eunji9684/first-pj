@@ -14,21 +14,23 @@ public class IconMovement {
     private Timer timer;
     private JPanel panel_1;
     private JButton btnNewButton;
-    private JButton btnNewButton_1;
     private JTextField textField;
     private JPasswordField passwordField;
     private JLabel lblNewLabel;
     private JLabel lblNewLabel_1;
+    private Comudia comu;
 
+    
     public IconMovement() {
-        frame = new JFrame();
+
+    	frame = new JFrame();
         frame.setSize(1500,1000);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
-
+        
         panel = new JPanel();
-        panel.setBackground(new Color(225, 186, 181));
+        panel.setBackground(new Color(226, 248, 248));
         panel.setLocation(0, 0);
         panel.setSize(1500,961);
         panel.setLayout(null);
@@ -36,47 +38,62 @@ public class IconMovement {
         ImageIcon icon = new ImageIcon(getClass().getResource("/img/코무니코1.png")); // Replace with the actual image file path
        
        panel_1 = new JPanel();
-       panel_1.setBackground(new Color(224, 192, 192));
+       panel_1.setBackground(new Color(206, 235, 251));
        panel_1.setLayout(null);
        panel_1.setBounds(804, 323, 319, 300);
        panel.add(panel_1);
        
-       btnNewButton = new JButton("New button");
-       btnNewButton.setBounds(36, 226, 97, 42);
-       panel_1.add(btnNewButton);
-       
-       btnNewButton_1 = new JButton("New button");
-       btnNewButton_1.setBounds(167, 226, 97, 42);
-       panel_1.add(btnNewButton_1);
+       RoundButton 회원가입 = new RoundButton("회원가입");
+       회원가입.setBounds(12, 224, 88, 42);
+       panel_1.add(회원가입);
        
        lblNewLabel = new JLabel("  아이디");
+       lblNewLabel.setOpaque(true);
+       lblNewLabel.setFont(new Font("Nanum Pen", Font.PLAIN, 26));
        
        lblNewLabel.setOpaque(true);
        lblNewLabel.setBackground(new Color(243, 233, 233));
-       lblNewLabel.setBounds(36, 57, 244, 42);
+       lblNewLabel.setBounds(36, 52, 244, 42);
        panel_1.add(lblNewLabel);
        
        textField = new JTextField();
        textField.setBorder(new LineBorder(new Color(255, 128, 192)));
-       textField.setBounds(103, 68, 161, 21);
+       textField.setBounds(114, 62, 150, 26);
        panel_1.add(textField);
        textField.setColumns(10);
        
        lblNewLabel_1 = new JLabel("  패스워드");
        lblNewLabel_1.setOpaque(true);
+       lblNewLabel_1.setFont(new Font("Nanum Pen", Font.PLAIN, 24));
+       lblNewLabel_1.setOpaque(true);
        lblNewLabel_1.setBackground(new Color(243, 233, 233));
-       lblNewLabel_1.setBounds(36, 130, 244, 42);
+       lblNewLabel_1.setBounds(36, 126, 244, 42);
        panel_1.add(lblNewLabel_1);
        
        passwordField = new JPasswordField();
        passwordField.setSelectionColor(new Color(255, 128, 192));
-       passwordField.setBounds(103, 141, 166, 21);
+       passwordField.setBounds(119, 136, 150, 26);
        panel_1.add(passwordField);
+       
+       RoundButton rndbtnLogin = new RoundButton("회원가입");
+       rndbtnLogin.setText("LogIN");
+       rndbtnLogin.setBounds(112, 224, 88, 42);
+       panel_1.add(rndbtnLogin);
+       
+       RoundButton 취소 = new RoundButton("취소");
+      
+       취소.setBounds(212, 224, 88, 42);
+       panel_1.add(취소);
                                
                                        iconLabel = new JLabel();
                                        iconLabel.setBounds(0, 300, 300, 300);
                                        panel.add(iconLabel);
                                        iconLabel.setIcon(icon);
+                                       
+    	comu = new Comudia();
+    	comu.setBackground(new Color(226, 248, 251));
+    	comu.setBounds(804, 105, 319, 208);
+    	panel.add(comu);
                                
         frame.setVisible(true);
 
@@ -112,7 +129,7 @@ public class IconMovement {
     }
 
     public void startAnimation() {
-        timer.start();
+    	timer.start();
     }
 
     public static void main(String[] args) {
