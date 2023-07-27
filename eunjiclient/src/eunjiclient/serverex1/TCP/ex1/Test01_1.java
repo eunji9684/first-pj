@@ -8,7 +8,7 @@ public class Test01_1 {
 		System.out.println("서버 실행 중...");
 		
 		//1)서버 소켓 만들기
-		ServerSocket serverSocket = new ServerSocket(8888);
+		ServerSocket serverSocket = new ServerSocket(587);
 		
 		
 		

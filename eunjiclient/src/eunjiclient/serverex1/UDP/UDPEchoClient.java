@@ -62,7 +62,7 @@ public class UDPEchoClient {
 	//메인메서드
 	public static void main(String[] args) {
 		//UDPEchoClient 객체 생성 및 실행
-		new UDPEchoClient("localhost", 3001);
+		new UDPEchoClient("localhost", 587);
 	}
 	
 }

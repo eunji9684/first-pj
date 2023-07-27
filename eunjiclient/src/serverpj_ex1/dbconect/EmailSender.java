@@ -1,55 +1,54 @@
 package serverpj_ex1.dbconect;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Base64;
-import java.util.Properties;
-import java.util.Random;
-
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import java.security.Security;
 import java.util.Properties;
 
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 public class EmailSender {
+    // Gmail 계정 정보
+    private static final String GMAIL_USERNAME = "dmswlwnsgk@gmail.com"; // Gmail 이메일 주소
+    private static final String GMAIL_PASSWORD = "sjfzdjicxthsqlvv"; // Gmail 앱 비밀번호
+
     // 사용자가 입력한 이메일로만 이메일을 전송하는 메서드
     public static void sendEmail(String userEmail, String tempPassword) {
-        // Gmail 계정 정보
-        final String username = "dmswlwnsgk@gmail.com"; // Gmail 이메일 주소
-        final String emailPassword = "alrcvgmdqorbryqc"; // Gmail 앱 비밀번호
-
         // 이메일 전송을 위한 프로퍼티 설정
         Properties props = new Properties();
+        props.put("mail.transport.protocol", "smtps");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com"); // Gmail의 경우
-        props.put("mail.smtp.port", "587");
+        //props.put("mail.smtps.ssl.protocols","TLSv1.2");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", 587);
 
         // 세션 생성
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, emailPassword);
+                return new PasswordAuthentication(GMAIL_USERNAME, GMAIL_PASSWORD);
             }
         });
 
         try {
             // 이메일 메시지 작성
+        	 // Java 기본 보안 프로퍼티 설정
+            Security.setProperty("jdk.tls.disabledAlgorithms", "");
+            Security.setProperty("jdk.certpath.disabledAlgorithms", "");
+            // SSL/TLS 프로토콜 사용
+            props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+
+            // 이메일 전송
+        	
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
+            message.setFrom(new InternetAddress(GMAIL_USERNAME));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(userEmail));
             message.setSubject("임시 비밀번호"); // 이메일 제목
-            message.setText("임시 비밀번호: " + tempPassword); // 임시 비밀번호 내용
+            message.setText("임시 비밀번호: " + tempPassword + "입니다"); // 임시 비밀번호 내용
 
             // 이메일 전송
             Transport.send(message);
@@ -64,7 +63,7 @@ public class EmailSender {
 
     public static void main(String[] args) {
         // 사용자가 입력한 이메일
-        String userEmail = "dmswlwnsgk@gmail.com";
+        String userEmail = "wjdtjrdntjr@naver.com";
 
         // 임시 비밀번호 생성
         String tempPassword = generateRandomPassword();

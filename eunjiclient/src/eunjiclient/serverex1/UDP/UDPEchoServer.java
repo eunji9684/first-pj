@@ -51,6 +51,6 @@ public class UDPEchoServer {
 		//메인 메서드
 	public static void main(String[] args) {
 		//UDPEchoServer 객체 생성 및 실행, 포트 번호 3001을 사용
-		new UDPEchoServer(3001);
+		new UDPEchoServer(587);
 	}
 }

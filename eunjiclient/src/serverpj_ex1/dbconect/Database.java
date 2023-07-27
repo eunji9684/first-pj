@@ -43,7 +43,8 @@ public class Database {
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, email);
             ResultSet rs = pstmt.executeQuery();
-
+            
+            System.out.println("이메일을입력하세요");
             return rs.next(); // 이메일이 존재하면 true, 없으면 false 반환
 
         } catch (SQLException e) {

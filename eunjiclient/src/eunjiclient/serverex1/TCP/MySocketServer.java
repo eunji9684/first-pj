@@ -14,7 +14,7 @@ public class MySocketServer {
 
 	public static void main(String[] args) {
 		try {
-			int socketport = 1234;
+			int socketport = 4212;
 			ServerSocket serverSocket = new ServerSocket(socketport);//소켓
 			
 			IpBlocker ipBlocker = new IpBlocker();
@@ -53,7 +53,9 @@ public class MySocketServer {
 				PrintWriter writer = new PrintWriter(out,true);
 				//BufferedReader에 위 InputStream을 담아 사용
 				
-				writer.println("SERVER TO CLIENT");
+				writer.println("난서버야");
+				
+				
 				//서버에서 클라이언트로 메세지 보내기
 			}
 		} catch (Exception e) {
