@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Dialog_option_String extends JLabel {
@@ -56,20 +56,21 @@ public class Dialog_option_String extends JLabel {
 			}
 			
 			public void mouseEntered(MouseEvent e) {
-				
+				/*
 	    		set_color = false;
 	    		Window_interface_D.팀페이지생성.repaint();
 	    		Window_interface_D.추가기능라벨.repaint();
 	    		Window_interface_D.추가기능라벨1.repaint();
-	    	
+	    	*/
 			};
 			
 	    	public void mouseExited(MouseEvent e) {
-	    		
+	    		/*
 	    		set_color = true;
 	    		Window_interface_D.팀페이지생성.repaint();
 	    		Window_interface_D.추가기능라벨.repaint();
 	    		Window_interface_D.추가기능라벨1.repaint();
+	    		*/
 	    	};
 		
 	    	
@@ -98,7 +99,7 @@ public class Dialog_option_String extends JLabel {
 	        graphics2d.fillRoundRect(x, y , width -1 - x *2 , height -1 - y*2, radius, radius);
 	        
 	        graphics2d.setColor(Window_interface_D.option.btn_label_set_font_color);
-	        graphics2d.setFont(Window_interface_All_file.font_omu.deriveFont(Window_interface_D.option.team_label_set_font_size));
+	        graphics2d.setFont(Window_Font_Install.font.deriveFont(Window_interface_D.option.team_label_set_font_size));
 	        
             FontMetrics fontmet = graphics2d.getFontMetrics();
             int t_Width = fontmet.stringWidth(a);
@@ -109,7 +110,7 @@ public class Dialog_option_String extends JLabel {
 	        
 	        graphics2d.drawString(a, x, y);
 	        
-	    
+	        graphics2d.dispose();
 		
 	}};
 	

@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import swing_d.dialog.Dialog_Select;
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Window_D_Label_String extends JLabel {
@@ -99,7 +99,7 @@ public class Window_D_Label_String extends JLabel {
 	        graphics2d.fillRoundRect(Window_interface_D.option.team_panel_x *2, y , width - Window_interface_D.option.team_panel_x*2 -Window_interface_D.option.team_panel_x , height -1 - y*2, radius, radius);
 	        
 	        graphics2d.setColor(Window_interface_D.option.btn_label_set_font_color);
-	        graphics2d.setFont(Window_interface_All_file.font_omu.deriveFont(Window_interface_D.option.team_label_set_font_size));
+	        graphics2d.setFont(Window_Font_Install.font.deriveFont(Window_interface_D.option.team_label_set_font_size));
 	        
             FontMetrics fontmet = graphics2d.getFontMetrics();
             int t_Width = fontmet.stringWidth(a);
@@ -109,7 +109,7 @@ public class Window_D_Label_String extends JLabel {
             int y = (height - t_Height) / 2 + fontmet.getAscent();
 	        
 	        graphics2d.drawString(a, 25, y);
-	        
+	        graphics2d.dispose();
 	    
 		
 	}};

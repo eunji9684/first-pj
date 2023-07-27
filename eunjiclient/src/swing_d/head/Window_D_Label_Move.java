@@ -14,7 +14,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Window_D_Label_Move extends JLabel {
@@ -81,7 +81,7 @@ public class Window_D_Label_Move extends JLabel {
 	        }
 	        
 	        graphics2d.setColor(Window_interface_D.option.btn_label_set_font_color);  // 폰트컬러 수정 위치 조정 필요
-	        graphics2d.setFont(Window_interface_All_file.font_omu.deriveFont(Window_interface_D.option.btn_label_set_font_size)); //폰트사이즈 위치 조정 필요
+	        graphics2d.setFont(Window_Font_Install.font.deriveFont(Window_interface_D.option.btn_label_set_font_size)); //폰트사이즈 위치 조정 필요
 	        
             FontMetrics fontmet = graphics2d.getFontMetrics();
             int t_Width = fontmet.stringWidth(a);
@@ -91,7 +91,7 @@ public class Window_D_Label_Move extends JLabel {
             int y = (getHeight() - t_Height) / 2 + fontmet.getAscent();
 	        
 	        graphics2d.drawString(a, x, y);
-	        
+	        graphics2d.dispose();
 	    }
 		
 	};

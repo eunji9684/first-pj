@@ -27,10 +27,12 @@ public class Window_Init {
 	public static boolean Frame_head = true;
 	//프레임의 getcontestpanel 투명화 옵션입니다.
 	public static Color Frame_backcolor = new Color(0,0,0,0); 
+	
 	//프레임의 사이즈를 바탕화면과 맞추는 오토사이즈 작업을 실행할지 말지를 결정합니다.
 	public boolean mainframe_auto_size = true;
 	//리사이저를 보여줄지 말지 정하는 옵션입니다.
 	public boolean resize_line_visible = false;
+	
 	public Color resize_color = new Color(255,255,255,0);
 	
 	/*최초의 메인 패널에 대한 설정임 해당 패널은 센터로, 좌,우,상,하에는 리사이저가 배치되어 있음*/
@@ -39,12 +41,12 @@ public class Window_Init {
 	public int main_panel_border_layout_x = 0;
 	public int main_panel_border_layout_y = 0;
 	public boolean main_panel_border_layout = true;
-	public boolean main_panel_border_rownd = true;
+	public boolean main_panel_border_rownd = false;
 	public float main_panel_border_setStroke = 1.0f;
 	public int main_panel_width_rownd  = 30;
 	public int main_panel_height_rownd = 30;	
-	public Color main_set_layout_color = new Color(120,120,120,255);
-	public Color main_set_fill_color = new Color(142,192,228,180);	//#8EC0E4
+	public Color main_set_layout_color = new Color(110,110,255,255);
+	public Color main_set_fill_color = new Color(142,192,248,200);	//#8EC0E4
 	
 	/* 로그인 패널로 리사이저가 배치되어 있지 않음 고정된 화면 요소임*/
 	public int main_login_x = 0;  
@@ -94,7 +96,7 @@ public class Window_Init {
 	public Color btn_label_set_fill_color = new Color(225,225,225,255);	
 	public Color btn_label_set_font_color = new Color(0,0,0,255);	
 	public float btn_label_border_setStroke = 1.0f;
-	public float btn_label_set_font_size = 16f;	
+	public float btn_label_set_font_size = 16.0f;	
 	public int btn_size = 20;
 	
 	public Color team_label_set_layout_color = new Color(0,0,0,255); // 현재 미사용
@@ -103,7 +105,7 @@ public class Window_Init {
 	
 	public Color team_label_set_font_color = new Color(0,0,0,255);	
 	public float team_label_border_setStroke = 2.0f;
-	public float team_label_set_font_size = 18f;	
+	public float team_label_set_font_size = 18.0f;	
 	
 	
 	/*헤드의 레이아웃 기능임*/
@@ -156,7 +158,7 @@ public class Window_Init {
 	public int table_panel_width_rownd  = 20;
 	public int table_panel_height_rownd  = 20;
 	public Color table_set_layout_color = new Color(0,0,0,255);
-	public Color table_set_fill_color = new Color(245,245,245,255);	
+	public Color table_set_fill_color = new Color(255,255,255,255);	
 	
 	/*테이블 안의 리스트 레이아웃 기능임*/
 	public GridBagLayout GL_list(GridBagLayout GL) {
@@ -194,16 +196,6 @@ public class Window_Init {
 	public int message_panel_height_rownd  = 20;
 	public Color message_set_layout_color = new Color(0,0,0,255);
 	public Color message_set_fill_color = new Color(245,245,245,255);	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

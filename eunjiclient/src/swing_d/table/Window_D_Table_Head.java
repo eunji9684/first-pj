@@ -10,6 +10,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 
+import swing_d.inter.Window_interface_D;
+
 public class Window_D_Table_Head extends JLabel {
 
 	int x_paint;
@@ -28,11 +30,11 @@ public class Window_D_Table_Head extends JLabel {
 		this.y_paint = location_y;		
 		this.rownd = rownd;
 		
-		setPreferredSize(new Dimension(width,height));
 		setOpaque(false); // 배경을 투명하게 설정
 		setLocation(x,y);
-		setSize(width,height);
+		setSize(0,height);
 		setLayout(null);
+		setPreferredSize(new Dimension(Window_interface_D.목록테이블.getWidth(), height));
 		
 		addMouseListener(new MouseAdapter() {
 		
@@ -45,26 +47,17 @@ public class Window_D_Table_Head extends JLabel {
         super.paintComponent(g);
     
         Graphics2D graphics2d = (Graphics2D) g.create();
-         
+        
         graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
        
-        graphics2d.setColor(back_color);
-        graphics2d.fillRoundRect(
+        graphics2d.setColor(new Color(180,180,180,180));
+        graphics2d.drawLine(
         		x_paint,
-        		y_paint, 
-            	this.width - x_paint * 2 - 1,
-            	this.height - y_paint * 2 - 1,
-            	rownd,rownd    	
+        		getHeight() -11, 
+        		getWidth() -x_paint *2,
+        		getHeight() -11
         );
-        graphics2d.setColor(line_color);
-        graphics2d.drawRoundRect(
-        		x_paint,
-        		y_paint, 
-            	this.width - x_paint * 2 - 1,
-            	this.height - y_paint * 2 - 1,
-            	rownd,rownd
-        );
-        
+      
         graphics2d.dispose();
         
 		}

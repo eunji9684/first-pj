@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Create_Project_Table_Text extends JTextField{
@@ -30,7 +30,7 @@ public class Create_Project_Table_Text extends JTextField{
 		this.width = width;
 		this.height = height;
 		
-		setFont(Window_interface_All_file.font_omu.deriveFont(fontsize));
+		setFont(Window_Font_Install.font.deriveFont(fontsize));
 		
 		setForeground(Color.black);
 		setOpaque(false);
@@ -68,10 +68,9 @@ public class Create_Project_Table_Text extends JTextField{
 	    else {graphics2d.setColor(new Color(120,180,180,255));}
 	    graphics2d.drawRoundRect(x, y, width - x * 2 -1 , height - y *2  -1 , rownd, rownd);
 	   
+	  
 	    graphics2d.dispose();
 	    
 	    super.paintComponent(g);
-	    
-	 
 	}
 }

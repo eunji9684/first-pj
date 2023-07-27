@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import swing_d.dialog.Dialog_Select;
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Create_Project_Table_Label_Select_Show extends JLabel {
@@ -37,9 +37,7 @@ public class Create_Project_Table_Label_Select_Show extends JLabel {
 	int rownd = 10;
 	int textmarginleft;
 	
-	
 	public Create_Project_Table_Label_Select_Show(Runnable run,String a,int x,int y ,int location_x , int location_y ,int width,int height, float fontsize, boolean event ,int textmarginleft){
-		
 		
 		this.textmarginleft = textmarginleft;
 		this.x = x ;
@@ -96,7 +94,7 @@ public class Create_Project_Table_Label_Select_Show extends JLabel {
 		    graphics2d.drawRoundRect(x, y, width - x * 2 -1 , height - y *2  -1 , rownd, rownd);
 	        
 	        graphics2d.setColor(Window_interface_D.option.btn_label_set_font_color);
-	        graphics2d.setFont(Window_interface_All_file.font_omu.deriveFont(fontsize));
+	        graphics2d.setFont(Window_Font_Install.font.deriveFont(fontsize));
 		    
             FontMetrics fontmet = graphics2d.getFontMetrics();
             int t_Width = fontmet.stringWidth(a);
@@ -109,7 +107,7 @@ public class Create_Project_Table_Label_Select_Show extends JLabel {
              	
 	        graphics2d.drawString(a, textmarginleft, y);
 	        
-	    
+	        graphics2d.dispose();
 		
 	}};
 	

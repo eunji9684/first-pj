@@ -47,7 +47,7 @@ public class IconMovement {
        회원가입.setBounds(12, 224, 88, 42);
        panel_1.add(회원가입);
        
-       lblNewLabel = new JLabel("  아이디");
+       lblNewLabel = new JLabel("  아이디 : ");
        lblNewLabel.setOpaque(true);
        lblNewLabel.setFont(new Font("Nanum Pen", Font.PLAIN, 26));
        
@@ -62,7 +62,7 @@ public class IconMovement {
        panel_1.add(textField);
        textField.setColumns(10);
        
-       lblNewLabel_1 = new JLabel("  패스워드");
+       lblNewLabel_1 = new JLabel(" 패스워드 : ");
        lblNewLabel_1.setOpaque(true);
        lblNewLabel_1.setFont(new Font("Nanum Pen", Font.PLAIN, 24));
        lblNewLabel_1.setOpaque(true);

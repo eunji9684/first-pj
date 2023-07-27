@@ -6,7 +6,7 @@ import java.io.File;
 
 public class Window_Font_Install {
 
-	public static Font font;
+	public static Font font = font_install();
 	
 	public Window_Font_Install(){
 		
@@ -17,7 +17,8 @@ public class Window_Font_Install {
 		
 		try {
 			
-			Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/오뮤다예쁨체.ttf"));
+			Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src/font/omu.ttf"));
+			
 			GraphicsEnvironment fo = GraphicsEnvironment.getLocalGraphicsEnvironment();
             fo.registerFont(font);
 		

@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Create_Project_Table_Label_Insert extends JLabel {
@@ -92,7 +92,7 @@ public class Create_Project_Table_Label_Insert extends JLabel {
 		    if(event) {graphics2d.setColor(new Color(100,100,100,255));}
 	        else {graphics2d.setColor(Window_interface_D.option.btn_label_set_font_color);}
 	        
-	        graphics2d.setFont(Window_interface_All_file.font_omu.deriveFont(fontsize));
+	        graphics2d.setFont(Window_Font_Install.font.deriveFont(fontsize));
 		    
             FontMetrics fontmet = graphics2d.getFontMetrics();
             int t_Width = fontmet.stringWidth(a);
@@ -105,7 +105,6 @@ public class Create_Project_Table_Label_Insert extends JLabel {
              	
 	        graphics2d.drawString(a, textmarginleft, y);
 	        
-	    
-		
+	        graphics2d.dispose();
 	}};
 	

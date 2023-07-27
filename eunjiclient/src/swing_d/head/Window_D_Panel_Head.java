@@ -74,7 +74,7 @@ public class Window_D_Panel_Head extends JPanel {
               
                 Window_interface_D.diary_frame.setLocation(newX, newY);
                 Window_interface_D.diary_frame.revalidate();
-                Window_interface_D.diary_table.revalidate();
+                Window_interface_D.목록테이블.revalidate();
                 
             }
             

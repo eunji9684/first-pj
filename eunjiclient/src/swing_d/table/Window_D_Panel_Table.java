@@ -8,19 +8,23 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import hj.*;
+
 import javax.swing.JPanel;
 
 import swing_d.inter.Window_interface_D;
+import swing_d.table.one.Window_D_Table_Center_One;
 
 public class Window_D_Panel_Table extends JPanel {
 
-	int x_paint;
-    int y_paint;
-    int width;
-    int height;
-    Window_D_Table_Head head; 
-	
+	public int x_paint;
+	public int y_paint;
+	public int width;
+	public int height;
+	public Window_D_Table_Head head; 
+	public Window_D_Table_Label_img icon;
+	public Window_D_Table_Label_textfiled filed;
+	public Window_D_Table_Center_One center;
+    
 	public Window_D_Panel_Table(BorderLayout layout ,int x,int y ,int width,int height){
 		setSize(width,height);
 		setLayout(layout);
@@ -43,9 +47,7 @@ public class Window_D_Panel_Table extends JPanel {
 		if(Window_interface_D.option.panel_auto_resize) {setLocation(Window_interface_D.option.table_panel_auto_x,Window_interface_D.option.table_panel_auto_y);}
 		else {setLocation(x,y);}
 		
-		
-		add(new 황은지_Accountbook());
-		
+	
 		addMouseListener(new MouseAdapter() {
 			
 		    public void mousePressed(MouseEvent e) {

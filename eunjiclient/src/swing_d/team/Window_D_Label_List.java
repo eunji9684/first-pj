@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Window_D_Label_List extends JLabel {
@@ -80,7 +80,7 @@ public class Window_D_Label_List extends JLabel {
 	        //graphics2d.drawRoundRect(Window_interface_D.option.user_team_space_x, Window_interface_D.option.user_team_space_y , getWidth() -1 -Window_interface_D.option.user_team_space_x *2 , getHeight() -1 -Window_interface_D.option.user_team_space_y*2, radius, radius);
 		       
 	        graphics2d.setColor(Window_interface_D.option.btn_label_set_font_color);
-	        graphics2d.setFont(Window_interface_All_file.font_omu.deriveFont(Window_interface_D.option.btn_label_set_font_size));
-	        
+	        graphics2d.setFont(Window_Font_Install.font.deriveFont(Window_interface_D.option.btn_label_set_font_size));
+	        graphics2d.dispose();
 	}};
 	

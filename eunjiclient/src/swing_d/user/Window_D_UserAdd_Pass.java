@@ -13,7 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import swing_d.inter.Window_interface_All_file;
+import swing_d.inter.Window_Font_Install;
 import swing_d.inter.Window_interface_D;
 
 public class Window_D_UserAdd_Pass extends JPasswordField{
@@ -23,6 +23,8 @@ public class Window_D_UserAdd_Pass extends JPasswordField{
 	int height;
 	int rownd = 10;
 	boolean key = true;
+	public boolean pass = false;
+	
 	
 	public Window_D_UserAdd_Pass(int x, int y, int location_x , int location_y, int width , int height){
 		
@@ -30,8 +32,6 @@ public class Window_D_UserAdd_Pass extends JPasswordField{
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		
-		//setFont(Window_interface_All_file.font_omu.deriveFont(fontsize));
 		
 		setForeground(Color.black);
 		setOpaque(false);
@@ -43,16 +43,33 @@ public class Window_D_UserAdd_Pass extends JPasswordField{
 		
 		addKeyListener(new KeyAdapter() {
 			public void keyReleased(KeyEvent e) {
-		
-				key = getText().isEmpty();
-				Window_interface_D.User_Pass.repaint();
-			
+				if(getText().length()==0) {
+					key = true;
+					pass = false;
+					Window_interface_D.User_Pass_labeL.a = "패스워드를 입력해 주세요";
+					Window_interface_D.User_Pass_labeL.repaint();
+				
+				}
+				
+				else if(getText().length()< 7 || 16 < getText().length()) {
+					key = true;
+					pass = false;
+					Window_interface_D.User_Pass_labeL.a = "패스워드 길이는 8 ~ 16자로 입력해주세요";
+					Window_interface_D.User_Pass_labeL.repaint();
+				}
+				else {
+					key = false;
+					pass = true;
+					Window_interface_D.User_Pass_labeL.a = "패스워드 완료";
+					Window_interface_D.User_Pass_labeL.repaint();
+				}
+				repaint();
 			}
-			public void keyPressed(KeyEvent e) {}
 		});
 		
 	}
 	
+
 	@Override
     protected void paintComponent(Graphics g) {
 	 
@@ -60,7 +77,7 @@ public class Window_D_UserAdd_Pass extends JPasswordField{
 	 
 	    graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-	    graphics2d.setColor(new Color(235,235,235,255));
+	    graphics2d.setColor(new Color(255,255,255,220));
 	    graphics2d.fillRoundRect(x, y, width - x * 2 -1 , height - y *2 -1 , rownd, rownd);
 	
 	    if(key) { graphics2d.setColor(Color.red);}

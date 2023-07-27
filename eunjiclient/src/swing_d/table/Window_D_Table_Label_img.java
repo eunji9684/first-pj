@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -48,7 +49,8 @@ public class Window_D_Table_Label_img extends JLabel {
         graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2d.setStroke(new BasicStroke(Window_interface_D.option.table_panel_border_setStroke));
         
-        graphics2d.setColor(Color.white);
+        graphics2d.setColor(new Color(235,235,235,200));
+        
         graphics2d.fillRoundRect(
         		x_paint,
         		y_paint,
@@ -57,17 +59,9 @@ public class Window_D_Table_Label_img extends JLabel {
         		rownd,
         		rownd
         );
-        graphics2d.setColor(Color.black);
-        graphics2d.drawRoundRect(
-        		x_paint,
-        		y_paint,
-        		width - x_paint *2 -1 ,
-        		height - y_paint *2 -1,
-        		rownd,
-        		rownd
-        );
-        
-        graphics2d.drawImage(icon.getImage(), x, y, null);
+    
+        int width_height = 52;
+        graphics2d.drawImage(icon.getImage(), (width /2) - (width_height/2) , (height /2) - (width_height/2), width_height,width_height,null);
         
         graphics2d.dispose();
         
