@@ -20,6 +20,7 @@ public class IconMovement {
 	private Comudia comu;
 	public QuoteEx quote;
 	
+	
 	public IconMovement() {
 
 		frame = new JFrame();
@@ -34,7 +35,7 @@ public class IconMovement {
 		panel.setSize(1500, 961);
 		panel.setLayout(null);
 		frame.getContentPane().add(panel);
-		ImageIcon icon = new ImageIcon(getClass().getResource("/img/코무니코1.png")); // Replace with the actual image file
+		ImageIcon icon = new ImageIcon(getClass().getResource("\\코무니코1.png")); // Replace with the actual image file
 																					// path
 
 		quote = new QuoteEx();
@@ -42,18 +43,18 @@ public class IconMovement {
 		quote.setHorizontalAlignment(SwingConstants.LEFT);
 
 		quote.setBounds(101, 686, 1329, 152);
-		//panel.add(quote);
+		panel.add(quote);
 
 		frame.setVisible(true);
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(206, 235, 251));
 		panel_1.setLayout(null);
-		panel_1.setBounds(804, 323, 319, 300);
+		panel_1.setBounds(804, 323, 319, 343);
 		panel.add(panel_1);
 
 		RoundButton 회원가입 = new RoundButton("회원가입");
-		회원가입.setBounds(12, 224, 88, 42);
+		회원가입.setBounds(12, 203, 88, 42);
 		panel_1.add(회원가입);
 
 		lblNewLabel = new JLabel("  아이디 : ");
@@ -84,15 +85,26 @@ public class IconMovement {
 		passwordField.setBounds(119, 136, 150, 26);
 		panel_1.add(passwordField);
 
-		RoundButton rndbtnLogin = new RoundButton("회원가입");
-		rndbtnLogin.setText("LogIN");
-		rndbtnLogin.setBounds(112, 224, 88, 42);
+		RoundButton rndbtnLogin = new RoundButton("로그인");
+		rndbtnLogin.setBounds(112, 203, 88, 42);
 		panel_1.add(rndbtnLogin);
 
 		RoundButton 취소 = new RoundButton("취소");
-
-		취소.setBounds(212, 224, 88, 42);
+		취소.setBounds(219, 203, 88, 42);
 		panel_1.add(취소);
+		
+		RoundButton rndbtnLogin_1 = new RoundButton("아이디/비밀번호 찾기");
+		rndbtnLogin_1.setBounds(36, 277, 228, 42);
+		panel_1.add(rndbtnLogin_1);
+		
+		rndbtnLogin_1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               
+            	new Imsipw();
+                
+            }
+        });
 
 		iconLabel = new JLabel();
 		iconLabel.setBounds(0, 300, 300, 300);

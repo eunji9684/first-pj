@@ -36,7 +36,7 @@ public class QuoteEx extends JLabel {
                 
                 
                 try {
-                    Thread.sleep(2000); // 5초 대기
+                    Thread.sleep(5000); // 5초 대기
                 } catch (InterruptedException e) {
                 	
         

@@ -1,4 +1,4 @@
-package serverpj_ex1.dbconect;
+package movecomu;
 
 import java.security.Security;
 import java.util.Properties;
@@ -48,30 +48,26 @@ public class EmailSender {
             message.setFrom(new InternetAddress(GMAIL_USERNAME));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(userEmail));
             message.setSubject("임시 비밀번호"); // 이메일 제목
-            message.setText("임시 비밀번호: " + tempPassword + "입니다"); // 임시 비밀번호 내용
-
-            // 이메일 전송
+            message.setText("임시 비밀번호: " + tempPassword + "입니다"); // 임시 비밀번호 내용       
+            
             Transport.send(message);
-
-            System.out.println("이메일이 성공적으로 전송되었습니다.");
 
         } catch (MessagingException e) {
             e.printStackTrace();
-            System.out.println("이메일 전송에 실패하였습니다.");
+            
         }
     }
 
-    /*public static void main(String[] args) {
+    //public static void main(String[] args) {
         // 사용자가 입력한 이메일
-        String userEmail = "wjdtjrdntjr@naver.com";
+       // String userEmail = "dmswl9684@gmail.com";
 
         // 임시 비밀번호 생성
-        String tempPassword = generateRandomPassword();
+        //String tempPassword = generateRandomPassword();
 
         // 이메일로 임시 비밀번호 전송
-        sendEmail(userEmail, tempPassword);
-    }
-    */
+        //sendEmail(userEmail, tempPassword);
+   // }
 
     // 임시 비밀번호 생성
     static String generateRandomPassword() {
