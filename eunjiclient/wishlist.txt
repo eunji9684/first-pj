@@ -1,0 +1,60 @@
+Name: 400
+Price: 500
+Place: 3000
+important: ★★★★★
+Memo: edsf
+============================
+Name: 400
+Price: 500
+Place: 3000
+important: ★★★★★
+Memo: edsf
+============================
+Name: 
+Price: 
+Place: 
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: 
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: 
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: 
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: dfsfd
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: 300
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: 
+important: 선택하세요
+Memo: 
+============================
+Name: 
+Price: 
+Place: 
+important: ★★★
+Memo: 
+============================
